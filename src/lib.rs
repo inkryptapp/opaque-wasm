@@ -9,5 +9,5 @@ extern "C" {
 
 #[wasm_bindgen]
 pub fn greet() {
-    alert("Hello, opaque-wasm!");
+    alert("✅ WASM binding is ready!");
 }
