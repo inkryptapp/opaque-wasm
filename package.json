@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "wasm-pack build --dev && pnpm run merge-pkg-meta",
+    "dev:vite-client": "pnpm --filter opaque-wasm-vite-client-example dev",
     "build": "rm -rf ./pkg && wasm-pack build && pnpm run merge-pkg-meta",
-    "biome": "pnpm exec biome check",
-    "biome:fix": "pnpm run biome --write",
+    "check": "pnpm exec biome check && cargo fmt --check",
+    "format": "pnpm exec biome check --write && cargo fmt",
     "merge-pkg-meta": "pnpm tsx scripts/merge-package.ts"
   },
   "devDependencies": {
