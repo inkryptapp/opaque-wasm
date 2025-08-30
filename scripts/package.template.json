@@ -1,0 +1,27 @@
+{
+  "name": "@inkrypt/opaque-wasm",
+  "version": "0.0.0",
+  "description": "Secure client-server authentication using the OPAQUE protocol, without the server ever learning the password.",
+  "keywords": ["react-native", "ios", "android"],
+  "collaborators": ["Peter Bartha <peterbartha@pm.me>"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inkryptapp/opaque-wasm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inkryptapp/opaque-wasm/issues"
+  },
+  "homepage": "https://github.com/inkryptapp/opaque-wasm#readme",
+  "files": [
+    "./esm/opaque_wasm_bg.wasm",
+    "./esm/opaque_wasm.js",
+    "./esm/opaque_wasm.d.ts",
+    "./cjs/opaque_wasm_bg.wasm",
+    "./cjs/opaque_wasm.js",
+    "./cjs/opaque_wasm.d.ts"
+  ],
+  "main": "./cjs/opaque_wasm.js",
+  "module": "./esm/opaque_wasm.js",
+  "sideEffects": ["./snippets/*"]
+}
