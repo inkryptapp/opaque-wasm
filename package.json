@@ -1,0 +1,13 @@
+{
+  "name": "@inkrypt/opaque-wasm-root",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "biome": "pnpm exec biome check",
+    "biome:fix": "pnpm run biome --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2"
+  },
+  "packageManager": "pnpm@10.15.0"
+}
