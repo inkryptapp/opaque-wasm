@@ -1,3 +1,4 @@
+mod base64;
 mod error;
 mod ksf;
 mod utils;
