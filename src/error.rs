@@ -2,7 +2,7 @@ use base64::DecodeError;
 use opaque_ke::errors::{InternalError, ProtocolError};
 use wasm_bindgen::prelude::*;
 
-pub enum Error {
+pub(crate) enum Error {
     Protocol {
         context: &'static str,
         error: ProtocolError,
@@ -17,11 +17,11 @@ pub enum Error {
     },
 }
 
-pub fn from_base64_error(context: &'static str) -> impl Fn(DecodeError) -> Error {
+pub(crate) fn from_base64_error(context: &'static str) -> impl Fn(DecodeError) -> Error {
     move |error| Error::Base64 { context, error }
 }
 
-pub fn from_protocol_error(context: &'static str) -> impl Fn(ProtocolError) -> Error {
+pub(crate) fn from_protocol_error(context: &'static str) -> impl Fn(ProtocolError) -> Error {
     move |error| Error::Protocol { context, error }
 }
 

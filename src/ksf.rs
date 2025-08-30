@@ -8,7 +8,7 @@ use crate::error::Error;
 
 #[derive(Debug, Serialize, Deserialize, Tsify)]
 #[tsify(into_wasm_abi, from_wasm_abi)]
-pub enum KeyStretchingFunctionConfig {
+pub(crate) enum KeyStretchingFunctionConfig {
     #[serde(rename = "rfc-9106-recommended")]
     Rfc9106Recommended,
     #[serde(rename = "libsodium-moderate")]
@@ -27,7 +27,7 @@ pub enum KeyStretchingFunctionConfig {
 }
 
 #[derive(Default)]
-pub struct CustomKsf {
+pub(crate) struct CustomKsf {
     argon: Argon2<'static>,
 }
 
@@ -67,10 +67,10 @@ fn build_argon2_ksf(
     })
 }
 
-pub fn get_custom_ksf(
+pub(crate) fn get_custom_ksf(
     ksf_config: Option<KeyStretchingFunctionConfig>,
 ) -> Result<Option<CustomKsf>, Error> {
-    let config = ksf_config.unwrap_or(KeyStretchingFunctionConfig::LibsodiumModerate);
+    let config = ksf_config.unwrap_or(KeyStretchingFunctionConfig::MemoryConstrained);
 
     match config {
         // https://www.rfc-editor.org/rfc/rfc9106.html#section-4-6.1
