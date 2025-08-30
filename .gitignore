@@ -32,4 +32,6 @@ target/
 **/*.rs.bk
 Cargo.lock
 bin/
+pkg/
+!pkg/package.json
 wasm-pack.log
