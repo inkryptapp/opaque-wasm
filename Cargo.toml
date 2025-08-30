@@ -20,7 +20,7 @@ base64 = "0.22.1"
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
 # code size when deploying.
 console_error_panic_hook = { version = "0.1.7", optional = true }
-generic-array = "0.14.7"
+generic-array = "1.2.0"
 getrandom = { version = "0.2.16", features = ["js", "wasm-bindgen"] }
 opaque-ke = "3"
 rand = "0.8.5"
