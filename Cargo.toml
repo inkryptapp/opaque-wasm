@@ -21,7 +21,7 @@ base64 = "0.22.1"
 # code size when deploying.
 console_error_panic_hook = { version = "0.1.7", optional = true }
 generic-array = "0.14.7"
-getrandom = { version = "0.2.16", features = ["js", "wasm-bindgen"] }
+getrandom = { version = "0.3.3", features = ["js", "wasm-bindgen"] }
 opaque-ke = "3"
 rand = "0.8.5"
 serde = { version = "1.0.219", features = ["derive"] }
