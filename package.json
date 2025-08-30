@@ -3,11 +3,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "dev": "wasm-pack build --dev && pnpm run merge-pkg-meta",
+    "build": "rm -rf ./pkg && wasm-pack build && pnpm run merge-pkg-meta",
     "biome": "pnpm exec biome check",
-    "biome:fix": "pnpm run biome --write"
+    "biome:fix": "pnpm run biome --write",
+    "merge-pkg-meta": "pnpm tsx scripts/merge-package.ts"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.2"
+    "@biomejs/biome": "2.2.2",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.19.1"
   },
   "packageManager": "pnpm@10.15.0"
 }

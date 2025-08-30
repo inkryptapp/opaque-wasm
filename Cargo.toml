@@ -1,7 +1,9 @@
 [package]
 name = "opaque-wasm"
+description = "Secure client-server authentication using the OPAQUE protocol, without the server ever learning the password."
 version = "0.0.0"
 authors = ["Peter Bartha <peterbartha@pm.me>"]
+license = "MIT"
 edition = "2018"
 
 [lib]
