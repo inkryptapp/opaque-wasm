@@ -93,6 +93,13 @@ async function login(
   return res.ok ? sessionKey : null;
 }
 
+async function fetchRestricted(): Promise<string> {
+  const { message } = await request("GET", "/restricted").then((res) =>
+    res.json()
+  );
+  return message;
+}
+
 form.addEventListener("submit", async (e: SubmitEvent) => {
   e.preventDefault();
 
@@ -122,6 +129,12 @@ form.addEventListener("submit", async (e: SubmitEvent) => {
         } else {
           alert(`Failed to register user "${username}"`);
         }
+        break;
+      }
+
+      case "fetch-restricted": {
+        const restrictedContent = await fetchRestricted();
+        alert(restrictedContent);
         break;
       }
 
