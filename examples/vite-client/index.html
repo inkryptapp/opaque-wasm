@@ -1,18 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <title>Vite Client - opaque-wasm example</title>
+    <title>opaque-wasm - Example Vite Client</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.indigo.min.css"
     />
   </head>
   <body>
     <main class="container">
-      <h1>Hello 👋</h1>
+      <h1>🔐 opaque-wasm</h1>
+
+      <section>
+        <form id="form">
+          <h3>
+            Client 🔁
+            <a
+              href="https://hono.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hono</a
+            >&nbsp;backend
+          </h3>
+          <p>
+            Make sure you're running example server:
+            <code>pnpm example:server:dev</code>
+          </p>
+          <div>
+            <label>
+              User identifier
+              <input
+                name="username"
+                placeholder="Username"
+                type="text"
+                autocomplete="off"
+                value="john.doe@example.com"
+              />
+            </label>
+
+            <label>
+              Password
+              <input
+                name="password"
+                placeholder="Password"
+                type="password"
+                autocomplete="off"
+                value="_P4ssw0rd123!"
+              />
+            </label>
+
+            <div>
+              <button name="register">Register</button>
+              <button name="login">Login</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <hr style="margin: 30px 0" />
+
+      <section>
+        <div>
+          <h3>In-memory demo</h3>
+          <p>Run the flow in-memory without backend.</p>
+          <span id="demo-loader" aria-busy="true" hidden
+            >working (check your console output)...</span
+          >
+          <button id="run-demo">Run demo</button>
+        </div>
+      </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
