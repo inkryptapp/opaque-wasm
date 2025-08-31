@@ -8,6 +8,8 @@
     "build:node": "wasm-pack build --target nodejs --out-dir pkg/cjs",
     "fixup": "pnpm exec tsx scripts/fixup-pkg.ts",
     "generate-dotenv": "pnpm exec tsx scripts/generate-dotenv",
+    "example:client:dev": "pnpm --filter opaque-wasm-vite-client-example dev",
+    "example:server:dev": "pnpm --filter opaque-wasm-hono-server-example dev",
     "check": "pnpm exec biome check && cargo fmt --check",
     "format": "pnpm exec biome check --write && cargo fmt"
   },

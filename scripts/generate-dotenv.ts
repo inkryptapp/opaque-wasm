@@ -13,6 +13,8 @@ async function writeDotEnv(): Promise<void> {
   const serverSetup = opaqueWasm.createServerSetup();
 
   const dotEnv = `# generated with \`scripts/generate-dotenv.ts\`
+# example server port
+PORT=8090
   
 # the opaque server setup (private server key)
 OPAQUE_SERVER_SETUP=${serverSetup}
